@@ -8,8 +8,8 @@ sequenceDiagram
   C->>S: ACK
 Note over C,S: TCP 3-way handshake established
 
-  C->>S: POST /login HTTP/1.1;
-Note right of C: Host: demo.local; User-Agent: LabBrowser/1.0
+  C->>S: POST /login HTTP/1.1
+Note right of C: "Host: demo.local User-Agent: LabBrowser/1.0"
   S-->>C: HTTP/1.1 200 OK (Set-Cookie: sessionid=ABC123XYZ)
 
   Note over C,S: Keep-Alive (HTTP/1.1)
