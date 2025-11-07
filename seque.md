@@ -1,4 +1,4 @@
-```
+
 sequenceDiagram
   autonumber
   participant C as Client (10.0.0.10:54321)
@@ -31,4 +31,3 @@ sequenceDiagram
   end note
 
   Note over C,S: HTTP/1.1 persistent connection (keep-alive)
-```
