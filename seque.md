@@ -4,13 +4,13 @@ sequenceDiagram
   participant C as Client (10.0.0.10:54321)
   participant S as Server (10.0.0.80:80)
 
-  %% TCP handshake
+  note TCP handshake
   Note over C,S: TCP 3-Way Handshake
   C->>S: SYN
   S->>C: SYN/ACK
   C->>S: ACK
 
-  %% HTTP request
+  note HTTP request
   C->>S: POST /login HTTP/1.1
   Note right of C
     Host: demo.local
@@ -21,7 +21,7 @@ sequenceDiagram
     Body: username=alice&amp;password=lab123
   end note
 
-  %% HTTP response
+  note : HTTP response
   S-->>C: HTTP/1.1 200 OK
   Note left of S
     Content-Type: text/html; charset=UTF-8
