@@ -1,27 +1,33 @@
 ```mermaid
 sequenceDiagram
-    autonumber
-    participant C as Client (10.0.0.10:54321)
-    participant S as Server (10.0.0.80:80)
+  autonumber
+  participant C as Client (10.0.0.10:54321)
+  participant S as Server (10.0.0.80:80)
 
-    rect rgb(245,245,245)
-    note over C,S: TCP 3-Way Handshake
-    C->>S: SYN
-    S->>C: SYN/ACK
-    C->>S: ACK
-    end
+  Note over C,S: TCP 3-Way Handshake
+  C->>S: SYN
+  S->>C: SYN/ACK
+  C->>S: ACK
 
-    rect rgb(235,250,255)
-    note over C,S: HTTP Request (plaintext HTTP/1.1)
-    C->>S: POST /login HTTP/1.1
-    Note right of C: "Host: demo.local\nUser-Agent: LabBrowser/1.0\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 30\nConnection: keep-alive\n\nusername=alice&password=lab123"
-    end
+  Note over C,S: HTTP Request (plaintext HTTP/1.1)
+  C->>S: POST /login HTTP/1.1
+  Note right of C
+    Host: demo.local
+    User-Agent: LabBrowser/1.0
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 30
+    Connection: keep-alive
+    Body: username=alice&amp;password=lab123
+  end note
 
-    rect rgb(235,255,235)
-    note over C,S: HTTP Response
-    S-->>C: HTTP/1.1 200 OK
-    Note left of S: "Content-Type: text/html; charset=UTF-8\nSet-Cookie: sessionid=ABC123XYZ; HttpOnly\nContent-Length: 39\n\n<html><body>Welcome alice</body></html>
-    end"
+  Note over C,S: HTTP Response
+  S-->>C: HTTP/1.1 200 OK
+  Note left of S
+    Content-Type: text/html; charset=UTF-8
+    Set-Cookie: sessionid=ABC123XYZ; HttpOnly
+    Content-Length: 39
+    Body: &lt;html&gt;&lt;body&gt;Welcome alice&lt;/body&gt;&lt;/html&gt;
+  end note
 
-    Note over C,S: HTTP/1.1 default persistent connection (keep-alive)
+  Note over C,S: HTTP/1.1 persistent connection (keep-alive)
 ```
