@@ -20,8 +20,8 @@ sequenceDiagram
     rect rgb(235,255,235)
     note over C,S: HTTP Response
     S-->>C: HTTP/1.1 200 OK
-    Note left of S: Content-Type: text/html; charset=UTF-8\nSet-Cookie: sessionid=ABC123XYZ; HttpOnly\nContent-Length: 39\n\n<html><body>Welcome alice</body></html>
-    end
+    Note left of S: "Content-Type: text/html; charset=UTF-8\nSet-Cookie: sessionid=ABC123XYZ; HttpOnly\nContent-Length: 39\n\n<html><body>Welcome alice</body></html>
+    end"
 
     Note over C,S: HTTP/1.1 default persistent connection (keep-alive)
 ```
