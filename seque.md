@@ -27,6 +27,21 @@ sequenceDiagram
     Content-Type: text/html; charset=UTF-8
     Set-Cookie: sessionid=ABC123XYZ; HttpOnly
     Content-Length: 39
+
+
+
+    #### 3.1 Arsitektur Sistem  
+```mermaid
+graph TD
+    A[Perangkat Jaringan] -->|SNMPv3| B(IoT Gateway)
+    B -->|MQTT| C[ThingsBoard Cloud]
+    C --> D[Dashboard Admin]
+    C --> E[Database]
+    C --> F[Analytics Engine]
+    B --> G[Local Buffer]
+    F --> H[Anomaly Detection]
+    H --> I[Notifikasi]
+```
     Body: &lt;html&gt;&lt;body&gt;Welcome alice&lt;/body&gt;&lt;/html&gt;
   end note
 
