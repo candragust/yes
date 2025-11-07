@@ -14,7 +14,7 @@ sequenceDiagram
     rect rgb(235,250,255)
     note over C,S: HTTP Request (plaintext HTTP/1.1)
     C->>S: POST /login HTTP/1.1
-    Note right of C: Host: demo.local\nUser-Agent: LabBrowser/1.0\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 30\nConnection: keep-alive\n\nusername=alice&password=lab123
+    Note right of C: "Host: demo.local\nUser-Agent: LabBrowser/1.0\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 30\nConnection: keep-alive\n\nusername=alice&password=lab123"
     end
 
     rect rgb(235,255,235)
