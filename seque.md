@@ -1,4 +1,4 @@
-```
+```mermaid
 sequenceDiagram
     autonumber
     participant C as Client (10.0.0.10:54321)
