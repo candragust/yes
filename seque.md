@@ -11,7 +11,7 @@ sequenceDiagram
 
   Note over C,S: HTTP Request (plaintext HTTP/1.1)
   C->>S: POST /login HTTP/1.1
-  Note right of C
+  Note right of C:
     Host: demo.local
     User-Agent: LabBrowser/1.0
     Content-Type: application/x-www-form-urlencoded
