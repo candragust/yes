@@ -11,11 +11,11 @@ sequenceDiagram
 
   %% HTTP request
   C->>S: POST /login HTTP/1.1
-  Note right of C: Host: demo.local
-  Note right of C: User-Agent: LabBrowser/1.0
-  Note right of C: Content-Type: application/x-www-form-urlencoded
-  Note right of C: Content-Length: 30
-  Note right of C: Connection: keep-alive
+  Note right of C: Host: demo.local;
+  Note right of C: User-Agent: LabBrowser/1.0;
+  Note right of C: Content-Type: application/x-www-form-urlencoded;
+  Note right of C: Content-Length: 30;
+  Note right of C: Connection: keep-alive;
   Note right of C: Body: username=alice&amp;password=lab123
 
   %% HTTP response
